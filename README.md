@@ -1,6 +1,6 @@
 # babylon-viewport-gizmo
 
-A simple Babylon. js perspective preview tool.
+A simple babylonjs camera perspective preview tool.
 
 ## 安装
 
