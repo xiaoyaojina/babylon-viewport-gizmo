@@ -1,0 +1,73 @@
+{
+  "name": "babylon-viewport-gizmo",
+  "version": "1.1.1",
+  "description": "Babylon.js 3D 开发辅助工具",
+  "type": "module",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "pnpm clean && rollup -c",
+    "dev": "rollup -c -w",
+    "lint": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\"",
+    "commit": "cz",
+    "prepublishOnly": "pnpm lint && pnpm build",
+    "release": "node publish-env.js",
+    "release:patch": "standard-version --release-as patch && pnpm release",
+    "release:minor": "standard-version --release-as minor && pnpm release",
+    "release:major": "standard-version --release-as major && pnpm release"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "keywords": [
+    "babylon",
+    "3d",
+    "typescript",
+    "gizmo",
+    "babylon-viewport-gizmo"
+  ],
+  "author": "wenjie",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaoyaojina/babylon-viewport-gizmo"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/node": "^22.15.29",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "dotenv": "^16.5.0",
+    "rimraf": "^5.0.10",
+    "rollup": "^4.41.1",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^8.10.1",
+    "@babylonjs/loaders": "^8.10.1"
+  },
+  "peerDependencies": {
+    "@babylonjs/core": "^8.0.0",
+    "@babylonjs/loaders": "^8.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

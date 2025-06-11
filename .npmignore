@@ -1,0 +1,22 @@
+# 源文件
+src/
+tests/
+
+# 配置文件
+.gitignore
+.github
+.eslintrc
+.prettierrc
+.editorconfig
+rollup.config.js
+tsconfig.json
+
+# 开发相关
+coverage/
+node_modules/
+.vscode/
+.idea/
+*.log
+.DS_Store 
+
+.env
